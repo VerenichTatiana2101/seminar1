@@ -15,10 +15,10 @@ int numberB = Convert.ToInt32(Console.ReadLine());
 
 if (numberA == numberB * numberB)
     {
-     Console.Write($"Квадрат числа {numberB} = {numberA}");
+     Console.Write($"Квадрат числа {numberB} = {numberA} -> да");
     }
 
 else
     {
-     Console.Write($"Квадрат числа {numberB} не равняется {numberA}");
+     Console.Write($"Квадрат числа {numberB} = {numberA} -> нет");
     }

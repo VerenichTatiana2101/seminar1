@@ -12,10 +12,11 @@ Console.Write("Введите число: ");
 int num = Convert.ToInt32(Console.ReadLine());
 if (num % 2 == 0)
 {
-    Console.WriteLine($"Число {num} чётное");
+    Console.WriteLine($"{num} -> да");
 }
 
 else
 {
-    Console.WriteLine($"Число {num} нечётное");
+    Console.WriteLine($"{num} -> нет");
 }
+

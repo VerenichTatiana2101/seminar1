@@ -7,24 +7,16 @@
 //  22, 3, 9 -> 22
 
 Console.Write("Введите целое число 1: ");
-int A = Convert.ToInt32(Console.ReadLine());
+int a = Convert.ToInt32(Console.ReadLine());
 
 Console.Write("Введите целое число 2: ");
-int B = Convert.ToInt32(Console.ReadLine());
+int b = Convert.ToInt32(Console.ReadLine());
 
 Console.Write("Введите целое число 3: ");
-int C = Convert.ToInt32(Console.ReadLine());
+int c = Convert.ToInt32(Console.ReadLine());
 
-int max = A;
-if (B > max)
-{
-    max = B;
-}
-if (C > max)
-{
-    max = C;
-}
+int max = a;
+if (b > max) max = b;
+if (c > max) max = c;
 
-Console.WriteLine($"Максимальное из чисел: {A}, {B}, {C} -> {max}");
-
-
+Console.WriteLine($"Максимальное из чисел: {a}, {b}, {c} -> {max}");

@@ -8,16 +8,16 @@
 // a = -9, b = -3 -> max = -3
 
 Console.Write("Введите целое число 1: ");
-int numberA = Convert.ToInt32(Console.ReadLine());
+int a = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите целое число 2: ");
-int numberB = Convert.ToInt32(Console.ReadLine());
+int b = Convert.ToInt32(Console.ReadLine());
 
-if (numberA > numberB)
+if (a > b)
     {
-     Console.Write($"a = {numberA}, b = {numberB} -> Max {numberA}");
+     Console.Write($"a = {a}, b = {b} -> Max {a}");
     }
 
 else
     {
-     Console.Write($"a = {numberA}, b = {numberB} -> Max {numberB}");
+     Console.Write($"a = {a}, b = {b} -> Max {b}");
     }

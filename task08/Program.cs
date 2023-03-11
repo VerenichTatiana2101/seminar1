@@ -14,9 +14,9 @@ int number2 = Convert.ToInt32(Console.ReadLine());
 bool result = MultTwoNumbers(number, number1, number2);
 Console.WriteLine(result ? "Да" : "Нет");
 
-bool MultTwoNumbers(int number, int number1, int number2)
+bool MultTwoNumbers(int num, int num1, int num2)
 {
-    return number % number1 == 0 && number % number2 == 0;
+    return num % num1 == 0 && num % num2 == 0;
 }
 
 

@@ -11,13 +11,14 @@ Console.Write("Введите целое число: ");
 int number1 = Convert.ToInt32(Console.ReadLine());
 int result = Remainder(number, number1);
 
-if (result == 0)
-{
-    Console.WriteLine("Кратно");
-}
-else
-    Console.WriteLine($"Не кратно, остаток {result}");
+// if (result == 0)
+// {
+//     Console.WriteLine("Кратно");
+// }
+// else
+//     Console.WriteLine($"Не кратно, остаток {result}");
 
+Console.WriteLine(result == 0 ? "Кратно" : $"Не кратно, остаток {result}");
 
 int Remainder(int num, int num1)
 {

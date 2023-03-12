@@ -5,6 +5,7 @@
 // 78 -> третьей цифры нет
 // 32679 -> 6
 
+
 Console.WriteLine("Введите число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 int result = ThirtNumber(number);
@@ -19,10 +20,13 @@ else
 
 int ThirtNumber(int thitdNum)
 {
+    if (number < 0)
+    {
+        number = number * -1;
+    }
     while (number > 999)
     {
-        number /= 10;
+        number = number / 10;
     }
     return number % 10;
 }
-

@@ -8,7 +8,7 @@
 
 Console.WriteLine("Введите число: ");
 int number = Convert.ToInt32(Console.ReadLine());
-int result = ThirtNumber(number);
+int result = ThirdDigit(number);
 if (number < 100)
 {
     Console.WriteLine("Третьей цифры нет");
@@ -18,7 +18,7 @@ else
     Console.WriteLine($"Третья цифра числа {result}");
 }
 
-int ThirtNumber(int thitdNum)
+int ThirdDigit(int thirdNum)
 {
     if (number < 0)
     {

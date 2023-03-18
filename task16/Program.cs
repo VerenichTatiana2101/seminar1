@@ -7,20 +7,21 @@
 Console.WriteLine("Введите целое  число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
-int factNumbers = FactNumbers(number);
-Console.WriteLine($"сумма чисел от 1 до {number} -> {factNumbers}");
+int factorial = Factorial(number);
+Console.WriteLine($"сумма чисел от 1 до {number} -> {factorial}");
 
-int FactNumbers(int num)
-{
-    int product = 1;
-    for (int count = 2; count <= num; count++)
-    {
-        checked
-        {
-            product = product * count;
+int Factorial(int num)                  // в while счётчик используется count
+{                                        // тут, в цикле for используется счётчик i
+    int product = 1;                     //i = 2, убираем лишнюю интерацию, хоть и работает с 1
+    for (int i = 2; i <= num; i++)  
+    {                               
+        checked                       //добавляем, чтобы программа выдавала ошибку при переполнении типа
+        {                              //в данном случае, это лучше неверного резельтата
+            product = product * i;
         }
-
     }
     return product;
 }
+
+//ещё сделать проверку на натуральность чисел
 

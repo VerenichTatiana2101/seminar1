@@ -1,57 +1,67 @@
-﻿// int[] array = new int[8]; // говорим компилятору сколько нужно выделить памяти  каждый 4 байта, тоесть в сумме 32 байта. 
-// // 8 это колличество элементов 0,1,2,3,4,5,6,7
-// array[3] = 34;
+﻿// Задача 30. 
+// Написать программу, которая
+// выводит массив из 8 элементов,
+// заполненный нулями и единицами в случайном порядке.
+// Например:
+// [1, 0, 1, 1, 0, 1, 0, 0]
 
 
-// int[] array = new int[8];
-// array[3] = 34;
-// for (int i = 0; i < array.Length; i++)
-// {
-//   array[i] = new Random().Next(0,2);
-//   Console.Write(array[i] + " "); 
-// }
+//массив заполняется нулями   
+// int[] arr = new int[8]; ---задаём длину массива, сколько памяти выделить под массив (4*8)байт
+// int[] arr = {1,2 }; можно сразу заполнить массив
+//array[3] = 34; можно в индекс 3 числа вписать значение   
 
-// // int[] arr = { 1, 2, 3 } // можно и так, но иногда нужен пустой
+int[] arr = new int[8];
 
+FillArray(arr);
+PrintArray(arr);
 
-
-
-
-// int[] array = new int[8];
-
-// void FillArr(int[] arr)
-// {
-//   for (int i = 0; i < array.Length; i++)
-// {
-//   arr[i] = new Random().Next(0,2);
-// }
-// }
-
-// void PrintArr(int[] arr)
-// {
-// for (int i = 0; i < array.Length; i++)
-// Console.Write(array[i] + " ");
-// }
-
-// FillArr(array);
-// PrintArr(array);
-
-int[] array = new int[8];
-FillArray(array);
-PrintArray(array);
 void FillArray(int[] array)
 {
     for (int i = 0; i < array.Length; i++)
     {
-        array[i] = new Random().Next(0, 2);
+        Random random = new Random();  //делается с отдельной переменной.
+        array[i] = random.Next(0, 2);
     }
 }
+
 void PrintArray(int[] array)
 {
     for (int i = 0; i < array.Length; i++)
-
     {
-        Console.Write(array[i] + " ");
+        Console.Write(array[i] + " "); //чтобы сделать пробелы между числами в массиве
     }
-
 }
+
+//вариант2
+
+// Console.Write("Введите размер массива: ");
+
+// int arraySize = Convert.ToInt32(Console.ReadLine());
+
+// if (arraySize <= 0)
+// {
+//     Console.WriteLine($"Ошибка: введено неверное значение {arraySize}");
+//     return;    //возвращает нас в начало
+// }
+
+// int[] arr = CreateArray(arraySize);
+// PrintArray(arr);
+// int[] CreateArray(int arrayLength)
+// {
+//     int[] newArray = new int[arrayLength];
+//     Random random = new Random();
+//     for (int i = 0; i < arrayLength; i++)
+//     {
+//         newArray[i] = random.Next(0, 2);
+//     }
+//     return newArray;
+// }
+
+// void PrintArray(int[] array)
+// {
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         Console.Write(array[i] + " "); //чтобы сделать пробелы между числами в массиве
+//     }
+// }

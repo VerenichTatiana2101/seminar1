@@ -15,7 +15,7 @@ Console.WriteLine($"Число {number} в степени {degree} -> {degreeNum
 int DegreeNumber(int num, int degr)
 {
     int numFix = num;
-    for (int i = 2; i <= degr; i++)
+    for (int i = 1; i != degr; i++)   
     {
         checked
         {
@@ -25,3 +25,4 @@ int DegreeNumber(int num, int degr)
     }
     return num;
 }
+

@@ -13,7 +13,7 @@ Console.WriteLine($"Сумма чисел от 1 до {number} = {sumNumbers}");
 int SumNumbers(int num)
 {
     int sum = 0;
-    for(int i = 0; i<=num; i++)
+    for(int i = 1; i<=num; i++)
     {
         sum +=i; //sum = sum + i
     }

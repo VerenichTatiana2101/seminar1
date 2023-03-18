@@ -4,19 +4,22 @@
 // 78 -> 2
 // 89126 -> 5
 
+Console.Clear();   //очистить консоль
+
 Console.WriteLine("Введите целое  число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
-int sumNumbers = SumNumbers(number);
-Console.WriteLine($"количество цифр в числе {number} -> {sumNumbers}");
+int countDigit = CountDigit(number);
+Console.WriteLine($"количество цифр в числе {number} -> {countDigit}");
 
-int SumNumbers(int num)
+int CountDigit(int num)
 {
-    int count = 0;
-    while (num != 0)
+    int count = 0;    //в цикле while счётчик используется count
+    while (num != 0) //пока число не равно 0
     {
-        count++;
+        count++; // фиксируем значение войдя в цикл
         num/=10;
     }
-    return count;
+    return count;  //считаем кол-во интераций, столько цифр 
 }
+

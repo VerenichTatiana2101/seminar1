@@ -36,8 +36,6 @@
 // FillArr(array);
 // PrintArr(array);
 
-
-
 int[] array = new int[8];
 FillArray(array);
 PrintArray(array);

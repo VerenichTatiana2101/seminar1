@@ -3,12 +3,15 @@
 // 4; массив [6, 7, 19, 345, 3] -> нет
 // 3; массив [6, 7, 19, 345, 3] -> да
 
+int[] array = GreatArrayRndInt(25, 1, 5);
 PrintArray(array);
+
 Console.WriteLine();
-Console.WriteLine("Введите число");
+Console.WriteLine("Введите число: ");
+
 int num = Convert.ToInt32(Console.ReadLine());
-string result = SearchNum(array, num) == true ? "Есть в массиве" : "Отсутствует в массиве";
-Console.WriteLine($"число {num} {result}" );
+string result = SearchNum(array, num) == true ? "есть в массиве" : "отсутствует в массиве";
+Console.WriteLine($"Число {num} {result}" );
 
 int[] GreatArrayRndInt(int size, int min, int max)
 {
@@ -21,6 +24,7 @@ int[] GreatArrayRndInt(int size, int min, int max)
     }
     return arr;
 }
+
 
 void PrintArray(int[] arr)
 {

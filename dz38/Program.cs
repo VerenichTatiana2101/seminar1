@@ -4,57 +4,64 @@
 // и минимальным элементов массива.
 // [3.5, 7.1, 22.9, 2.3, 78.5] -> 76.2
 
-int[] arr = {12, 1, 17, 36, 95, 13, 12};
-
-void PrintArray(int[] array)
+double[] CreateArrayRndDouble(int size, int min, int max)
 {
-    int count = array.Length;
-    for (int i = 0; i < count; i++)
+    double[] arr = new double[size];
+    Random rnd = new Random();
+    for (int i = 0; i < arr.Length; i++)
     {
-        Console.Write($"{array[i]} ");
+        double num = rnd.NextDouble() * (max - min) + min;
+        arr[i] = Math.Round(num, 1);
     }
-    Console.WriteLine();
+    return arr;
 }
 
-int SelectionSort(int[] array)
+double MaxNumber(double[] array)
 {
-    int max = 0;
-    int min = array[0];
+    double max = 0;
     for (int i = 0; i < array.Length; i++)
     {
         if (array[i] > max) max = array[i];
-        else if (array[i] < min) min = array[i];
     }
-    int res = max - min;
-    return res;
+    return max;
 }
 
+double MinNumber(double[] array)
+{
+    double min = array[0];
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] < min) min = array[i];
+    }
+    return min;
+}
 
+double DifferenceMaxMin(double max, double min)
+{
+    return max - min;
+}
 
-PrintArray(arr);
-SelectionSort(arr);
+void PrintArray(double[] arr)
+{
+    Console.Write("[");
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (i < arr.Length - 1) Console.Write($"{arr[i]}; ");
+        else Console.Write($"{arr[i]}");
+    }
+    Console.Write("]");
+}
 
-Console.WriteLine($"разницу между максимальным и минимальным элементов массива -> {SelectionSort(arr)} ");
+double[] array = CreateArrayRndDouble(5, 1, 5);
+PrintArray(array);
+Console.WriteLine();
 
+double max = MaxNumber(array);
+MaxNumber(array);
 
+double min = MinNumber(array);
+MinNumber(array);
 
-// double[] CreateArrayRndDouble(int size, int min, int max)
-// {
-//     double[] arr = new double[size];
-//     Random rnd = new Random();
+double difference = DifferenceMaxMin(max, min);
+Console.WriteLine($"Разность максимального [{max}] и минимального [{min}] элементов -> {Math.Round(difference, 2)}");
 
-//     for (int i = 0; i < arr.Length; i++)
-//     {
-//         double num = rnd.NextDouble() * (max - min) + min;
-//         arr[i] = Math.Round(num, 1);
-//     }
-//     return arr;
-// }
-
-
-
-// void PrintArray(int[] arr)
-// {
-//     Console.WriteLine("{0}", string.Join(", ", arr));
-//     Console.WriteLine();
-// }

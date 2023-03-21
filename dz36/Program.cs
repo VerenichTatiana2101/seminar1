@@ -27,7 +27,7 @@ void PrintArray(int[] arr)
     Console.Write("]");
 }
 
-int SumEvenNumbers(int[] arr)
+int SumOddNumbers(int[] arr)
 {
     int sumI = 0;
     for (int i = 0; i < arr.Length; i++)
@@ -41,6 +41,6 @@ int SumEvenNumbers(int[] arr)
 int[] array = ArrayRndInt(6, -50, 100);
 PrintArray(array);
 
-int sumNumber = SumEvenNumbers(array);
+int sumNumber = SumOddNumbers(array);
 Console.WriteLine();
 Console.WriteLine($"Суммa элементов, стоящих на нечётных позициях: {sumNumber}");

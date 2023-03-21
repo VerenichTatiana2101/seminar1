@@ -5,13 +5,6 @@
 // покажет количество чётных чисел в массиве.
 // [345, 897, 568, 234] -> 2
 
-int[] array = ArrayRndInt(5, 99, 1000);
-PrintArray(array);
-
-int sumNumber = SumEvenNumbers(array);
-Console.WriteLine();
-Console.WriteLine($"Количество чётных чисел в массиве: {sumNumber}");
-
 int[] ArrayRndInt(int size, int min, int max)
 {
     int[] arr = new int[size];
@@ -34,16 +27,21 @@ void PrintArray(int[] arr)
     Console.Write("]");
 }
 
-int SumEvenNumbers(int[] arr)
+int CountEvenNumbers(int[] arr)
 {
-    int sum = 0;
+    int count = 0;
     for (int i = 0; i < arr.Length; i++)
     {
         if (arr[i] % 2 == 0)
-            sum++;
+            count++;
     }
-    return sum;
+    return count;
 }
 
+int[] array = ArrayRndInt(10, 99, 1000);
+PrintArray(array);
 
+int countNumber = CountEvenNumbers(array);
+Console.WriteLine();
+Console.WriteLine($"Количество чётных чисел в массиве-> {countNumber}");
 

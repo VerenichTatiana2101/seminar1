@@ -4,25 +4,41 @@
 // 3, 5 -> 243 (3⁵)
 // 2, 4 -> 16
 
-Console.WriteLine("Введите целое число: ");
-int number = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите степень числа: ");
-int degree = Convert.ToInt32(Console.ReadLine());
-
-int degreeNumber = DegreeNumber(number, degree);
-Console.WriteLine($"Число {number} в степени {degree} -> {degreeNumber}");
-
-int DegreeNumber(int num, int degr)
+int Promp(string massage)
 {
-    int numFix = num;
-    for (int i = 1; i != degr; i++)   
+    System.Console.Write(massage); //выводим приглашение ко вводу
+    string readInput = System.Console.ReadLine(); //вводим значение
+    int result = int.Parse(readInput); //приводим к числу
+    return result;   //возвращаем результат
+}
+
+int DegreeNumber(int numFix, int degree)
+{
+    int res = 1;
+    for (int i = 0; i != degree; i++)
     {
         checked
         {
-            num *= numFix;
+            res *= numFix;
         }
-
     }
-    return num;
+    return res;
 }
 
+bool ValidateDegreeNumber(int degree)
+{
+    if (degree < 0)
+    {
+        System.Console.WriteLine("Показатель не должен быть меньше нуля");
+        return false;
+    }
+    return true;
+}
+
+int numFix = Promp("Введите целое число: ");
+int degree = Promp("Введите натуральную степень числа: ");
+
+if (ValidateDegreeNumber(degree))
+{
+    System.Console.WriteLine($"Число {numFix} в степени {degree} -> {DegreeNumber(numFix, degree)}");
+}

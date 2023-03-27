@@ -1,6 +1,6 @@
 ﻿// Задача 43: Напишите программу, которая 
 // найдёт точку пересечения двух прямых, 
-// заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; 
+// заданных уравнениями y = k1 * x + b1, y = k2 * x + b2;      //y = 5x+2  y= 9x+4
 // значения b1, k1, b2 и k2 задаются пользователем.
 // b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
 
@@ -27,7 +27,7 @@ double Promp(string message)
     string value = Console.ReadLine();
     double result = Convert.ToInt32(value);
     return result;
-} 
+}
 
 double[] InputLineData(int numberOfLine)
 {
@@ -40,10 +40,8 @@ double[] InputLineData(int numberOfLine)
 double[] FindCoords(double[] lineData1, double[] lineData2)
 {
     double[] coord = new double[2];
-    coord[X_COORD] = (lineData1[CONSTANT] - lineData2[CONSTANT] / 
-(lineData2[COEFFICIENT]) - lineData1[COEFFICIENT]);
-    coord[Y_COORD] = lineData1[CONSTANT] * coord[X_COORD] +
-lineData1[CONSTANT];
+    coord[X_COORD] = (lineData1[CONSTANT] - lineData2[CONSTANT]) / ((lineData2[COEFFICIENT]) - lineData1[COEFFICIENT]);
+    coord[Y_COORD] = lineData1[CONSTANT] * coord[X_COORD] + lineData1[CONSTANT];   //выше в выводе результата коэф2*х + конст2 тогда работает прав
     return coord;
 }
 
@@ -56,11 +54,11 @@ bool ValidateLines(double[] lineData1, double[] lineData2)
             Console.WriteLine("Прямые совпадают");  //необходимо ли это, ведь не трубует условие
             return false;
         }
-    else
-    {
-        Console.WriteLine("Прямые параллельны");
-        return false;
-    }
+        else
+        {
+            Console.WriteLine("Прямые параллельны");
+            return false;
+        }
     }
     return true;
 }    //неверный результат

@@ -11,25 +11,29 @@ int[,] array2d = CreateMatrixRndInt(4, 5, -10, 10);
 PrintMatrix(array2d);
 
 Console.Write("Введите номер строки: ");
-int numberRows = Convert.ToInt32(Console.ReadLine());
+int numRows = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите номер столбца: ");
-int numberColumns = Convert.ToInt32(Console.ReadLine());
+int numColumns = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine();
 
-int result = ElementMatrix(array2d, numberRows, numberColumns);
+bool arrayExistance = ArrayExistance(array2d, numRows, numColumns);
 
-if (numberRows > array2d.GetLength(0) || numberColumns > array2d.GetLength(1))
-{
-    Console.WriteLine($"{numberRows}, {numberColumns} -> такого числа нет в массиве");
-}
-else 
-{
-    Console.WriteLine($"{numberRows}, {numberColumns} -> {result}");
+Console.WriteLine(arrayExistance ? $"{numRows}, {numColumns} -> такого числа нет в массиве"
+                                 : $"{numRows}, {numColumns} -> {array2d[numRows - 1, numColumns - 1]}");
+
+bool ArrayExistance(int[,] matrix, int rows, int columns)        //метод проверки введённых чисел, 
+{                                                                //входят ли они в рамки массива
+    if (rows > matrix.GetLength(0)
+    || columns > matrix.GetLength(1)
+    || rows <= 0 
+    || columns <= 0)
+    return true;
+    else return false;
 }
 
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
 {                          // 0       1
-    int[,] matrix = new int[rows, columns];
+    int[,] matrix = new int[rows, columns];                     //метод создания двумерного массива со случайными числами
     Random rnd = new Random();
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
@@ -41,7 +45,7 @@ int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
     return matrix;
 }
 
-void PrintMatrix(int[,] matrix)
+void PrintMatrix(int[,] matrix)                            //метод печати двумерного массива
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
@@ -52,10 +56,5 @@ void PrintMatrix(int[,] matrix)
         }
         Console.WriteLine("|");
     }
-}
-
-int ElementMatrix(int[,] matrix, int numRows, int numColumns)
-{
-    return matrix[numRows - 1, numColumns - 1];
 }
 

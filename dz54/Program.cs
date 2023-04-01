@@ -9,10 +9,16 @@
 // 9 5 3 2
 // 8 4 4 2
 
+Console.WriteLine("Созданный массив: ");
 int[,] array2d = CreateMatrixRndInt(5, 5, -10, 10);
 PrintMatrix(array2d);
 Console.WriteLine();
+Console.WriteLine("Отсортированный массив по убыванию построчно вариант 1: ");
 SortRowsNumbers(array2d);
+PrintMatrix(array2d);
+
+Console.WriteLine("Отсортированный массив по убыванию построчно вариант 2: ");
+SortRowsNumbers2(array2d);
 PrintMatrix(array2d);
 
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
@@ -42,7 +48,29 @@ void PrintMatrix(int[,] matrix)                                //метод пе
     }
 }
 
-void SortRowsNumbers(int[,] matrix)
+void SortRowsNumbers(int[,] matrix)      //метод сортировки по строкам от большего к меньшему
+{
+    int k = 0;
+    int temp = 0;
+    while (k < matrix.GetLength(1))
+    {
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            for (int j = 0; j < matrix.GetLength(1); j++)
+            {
+                if (matrix[i, j] < matrix[i, k])
+                {
+                    temp = matrix[i, k];
+                    matrix[i, k] = matrix[i, j];
+                    matrix[i, j] = temp;
+                }
+            }
+        }
+        k++;
+    }  
+}
+
+void SortRowsNumbers2(int[,] matrix)           //метод сортировки по строкам от большего к меньшему
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {

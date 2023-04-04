@@ -15,7 +15,7 @@ if (Verification(row, colum))
     Console.Write("Введены неверные данные");
     return;
 }
-int[,] array2d = CreateMatrix(row, -10, 10);
+int[,] array2d = SquareCreateMatrix(row, -10, 10);
 int[,] newArray2d = ChangeColumsRows(array2d);
 PrintMatrix(array2d);
 Console.WriteLine("Новый массив");

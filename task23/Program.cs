@@ -9,9 +9,9 @@ int[] CreateArrayRndInt(int size, int min, int max)
     int[] array = new int[size];
     Random random = new Random();
 
-    for(int i = 0; i < array.Length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
-        array[i] = random.Next(min, max +1);
+        array[i] = random.Next(min, max + 1);
     }
 
     return array;
@@ -30,12 +30,12 @@ void PrintArray(int[] arr)
 
 void ReversArray(int[] arr)
 {
-for (int i = 0; i < arr.Length/2; i++)
-{
-    int temp = arr[i];
-    arr[i] = arr[arr.Length - 1 -i];
-    arr[arr.Length - 1 -i] = temp;
-}
+    for (int i = 0; i < arr.Length / 2; i++)
+    {
+        int temp = arr[i];
+        arr[i] = arr[arr.Length - 1 - i];
+        arr[arr.Length - 1 - i] = temp;
+    }
 }
 
 int[] array = CreateArrayRndInt(5, 1, 9);
